@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookstore", "src\Bookstore\Bookstore.csproj", "{7DC8D854-2D78-496A-A7A0-186DAA8428C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookstore.Cache", "src\Bookstore.Cache\Bookstore.Cache.csproj", "{CFDD5438-60A1-4CB9-B9EE-FE525E1CDA87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookstore.Contracts", "src\Bookstore.Contracts\Bookstore.Contracts.csproj", "{1C6661FF-D4CA-46D3-8A4B-B40AA36DDA61}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DC8D854-2D78-496A-A7A0-186DAA8428C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DC8D854-2D78-496A-A7A0-186DAA8428C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DC8D854-2D78-496A-A7A0-186DAA8428C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DC8D854-2D78-496A-A7A0-186DAA8428C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFDD5438-60A1-4CB9-B9EE-FE525E1CDA87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFDD5438-60A1-4CB9-B9EE-FE525E1CDA87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFDD5438-60A1-4CB9-B9EE-FE525E1CDA87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFDD5438-60A1-4CB9-B9EE-FE525E1CDA87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C6661FF-D4CA-46D3-8A4B-B40AA36DDA61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C6661FF-D4CA-46D3-8A4B-B40AA36DDA61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C6661FF-D4CA-46D3-8A4B-B40AA36DDA61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C6661FF-D4CA-46D3-8A4B-B40AA36DDA61}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
