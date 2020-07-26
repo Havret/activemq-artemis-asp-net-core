@@ -1,6 +1,8 @@
 using ActiveMQ.Artemis.Client;
 using ActiveMQ.Artemis.Client.Extensions.DependencyInjection;
 using ActiveMQ.Artemis.Client.Extensions.Hosting;
+using Bookstore.Audit.Consumers;
+using Bookstore.Contracts;
 using Bookstore.Messaging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -9,7 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Bookstore
+namespace Bookstore.Audit
 {
     public class Startup
     {
@@ -25,12 +27,14 @@ namespace Bookstore
         {
             services.AddControllers();
             
-            services.AddDbContext<BookstoreContext>(options =>
-                // options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Bookstore;Trusted_Connection=True;"));
-                options.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=Bookstore;Integrated Security=True"));
-            
+            services.AddDbContext<BookstoreAuditContext>(options =>
+                options.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=BookstoreAudit;Integrated Security=True"));
+
             services.AddActiveMq("bookstore-cluster", new[] { Endpoint.Create(host: "localhost", port: 5672, "guest", "guest") })
-                    .AddAnonymousProducer<MessageProducer>();
+                    .AddTypedConsumer<BookCreated, BookCreatedConsumer>(RoutingType.Multicast, nameof(Audit))
+                    .AddTypedConsumer<BookUpdated, BookUpdatedConsumer>(RoutingType.Multicast, nameof(Audit))
+                    .EnableAddressDeclaration()
+                    .EnableQueueDeclaration();
 
             services.AddHostedService<InitDatabaseHostedService>();
             services.AddActiveMqHostedService();

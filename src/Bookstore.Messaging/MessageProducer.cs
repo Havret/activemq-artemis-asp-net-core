@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using ActiveMQ.Artemis.Client;
 
-namespace Bookstore
+namespace Bookstore.Messaging
 {
     public class MessageProducer
     {

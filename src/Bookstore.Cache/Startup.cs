@@ -1,7 +1,9 @@
 using ActiveMQ.Artemis.Client;
 using ActiveMQ.Artemis.Client.Extensions.DependencyInjection;
 using ActiveMQ.Artemis.Client.Extensions.Hosting;
+using Bookstore.Cache.Consumers;
 using Bookstore.Contracts;
+using Bookstore.Messaging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -25,7 +27,8 @@ namespace Bookstore.Cache
             services.AddControllers();
             
             services.AddActiveMq("bookstore-cluster", new[] { Endpoint.Create(host: "localhost", port: 5672, "guest", "guest") })
-                    .AddTypedConsumer<BookCreatedConsumer, BookCreated>(RoutingType.Multicast);
+                    .AddTypedConsumer<BookCreated, BookCreatedConsumer>(RoutingType.Multicast)
+                    .AddTypedConsumer<BookUpdated, BookUpdatedConsumer>(RoutingType.Multicast);
             services.AddActiveMqHostedService();
 
             services.AddSingleton<BookCache>();

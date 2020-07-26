@@ -2,7 +2,7 @@
 
 namespace Bookstore.Contracts
 {
-    public class BookCreated
+    public class BookUpdated
     {
         public Guid Id { get; set; }
         public string Title { get; set; }

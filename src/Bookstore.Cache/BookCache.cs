@@ -8,10 +8,10 @@ namespace Bookstore.Cache
     public class BookCache
     {
         private readonly ConcurrentDictionary<Guid, BookCacheEntry> _cache = new ConcurrentDictionary<Guid, BookCacheEntry>();
-        
-        public Task AddAsync(BookCacheEntry cacheEntry, CancellationToken cancellationToken)
+
+        public Task AddOrUpdate(BookCacheEntry cacheEntry, CancellationToken cancellationToken)
         {
-            _cache.TryAdd(cacheEntry.Id, cacheEntry);
+            _cache.AddOrUpdate(cacheEntry.Id, cacheEntry, (guid, entry) => cacheEntry);
             return Task.CompletedTask;
         }
 

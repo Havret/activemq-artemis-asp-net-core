@@ -1,28 +1,37 @@
-@api = https://localhost:5001
-@bookId = 22de779f-84c3-4978-a609-359b3f08d239
+@bookstore = https://localhost:5001
+@bookstore-cache = https://localhost:6001
+@bookstore-audit = https://localhost:7001
+
+@bookId = c9836986-6992-4fe7-b41a-c7554f1dbff5
+@userId= 8DD21F7D-0293-460F-869C-312BC7119BA6
 
 ### Get book
-GET {{api}}/api/books/{{bookId}}
+GET {{bookstore-cache}}/books/{{bookId}}
 
-### Get books
-GET {{api}}/api/books
+### Get user actions
+GET {{bookstore-audit}}/audit
+
 
 ### Create new book
-POST {{api}}/api/books
+POST {{bookstore}}/books
+content-type: application/json
+
+{
+    "title": "Domain-driven desig",
+    "author": "Eric J. Evans",    
+    "cost": 500,
+    "inventoryAmount": 20,
+    "userId": "{{userId}}"
+}
+
+### Update book
+PUT {{bookstore}}/books/{{bookId}}
 content-type: application/json
 
 {
     "title": "Domain-driven design",
     "author": "Eric J. Evans",    
     "cost": 500,
-    "inventoryAmount": 20
+    "inventoryAmount": 21,
+    "userId": "{{userId}}"
 }
-
-### Update book
-PATCH {{api}}/api/books/{{bookId}}
-content-type: application/json
-
-[{ "op": "replace", "path": "/InventoryAmount", "value": 26 }]
-
-### Delete book
-DELETE {{api}}/api/books/{{bookId}}

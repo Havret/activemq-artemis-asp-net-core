@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Bookstore.Audit</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,6 +15,5 @@
     <ProjectReference Include="..\Bookstore.Contracts\Bookstore.Contracts.csproj" />
     <ProjectReference Include="..\Bookstore.Messaging\Bookstore.Messaging.csproj" />
   </ItemGroup>
-
 
 </Project>

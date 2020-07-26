@@ -1,8 +1,9 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using Bookstore.Contracts;
+using Bookstore.Messaging;
 
-namespace Bookstore.Cache
+namespace Bookstore.Cache.Consumers
 {
     internal class BookCreatedConsumer : ITypedConsumer<BookCreated>
     {
@@ -15,7 +16,7 @@ namespace Bookstore.Cache
 
         public async Task ConsumeAsync(BookCreated message, CancellationToken cancellationToken)
         {
-            await _bookCache.AddAsync(new BookCacheEntry(
+            await _bookCache.AddOrUpdate(new BookCacheEntry(
                 id: message.Id,
                 title: message.Title,
                 author: message.Author,

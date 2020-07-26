@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Unofficial.ActiveMQ.Artemis.Client.Extensions.DependencyInjection" Version="1.0.0-preview1" />
+  </ItemGroup>
+
+</Project>

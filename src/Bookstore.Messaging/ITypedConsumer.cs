@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 
-namespace Bookstore.Cache
+namespace Bookstore.Messaging
 {
     public interface ITypedConsumer<in T>
     {

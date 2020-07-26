@@ -1,15 +1,13 @@
 ﻿using System;
 
-namespace Bookstore.Contracts
+namespace Bookstore.Commands
 {
-    public class BookCreated
+    public class UpdateBook
     {
-        public Guid Id { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
         public decimal Cost { get; set; }
         public int InventoryAmount { get; set; }
         public Guid UserId { get; set; }
-        public DateTime Timestamp { get; set; }
     }
 }
