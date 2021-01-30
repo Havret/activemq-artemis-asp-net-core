@@ -2,7 +2,7 @@
 @bookstore-cache = https://localhost:6001
 @bookstore-audit = https://localhost:7001
 
-@bookId = c9836986-6992-4fe7-b41a-c7554f1dbff5
+@bookId = bd772b31-6d24-49d5-8314-af4c1de63a40
 @userId= 8DD21F7D-0293-460F-869C-312BC7119BA6
 
 ### Get book

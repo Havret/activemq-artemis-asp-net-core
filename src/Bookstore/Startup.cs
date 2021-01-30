@@ -24,11 +24,10 @@ namespace Bookstore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            
+
             services.AddDbContext<BookstoreContext>(options =>
-                // options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Bookstore;Trusted_Connection=True;"));
                 options.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=Bookstore;Integrated Security=True"));
-            
+
             services.AddActiveMq("bookstore-cluster", new[] { Endpoint.Create(host: "localhost", port: 5672, "guest", "guest") })
                     .AddAnonymousProducer<MessageProducer>();
 

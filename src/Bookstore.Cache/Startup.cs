@@ -1,3 +1,5 @@
+using System;
+using System.Threading.Tasks;
 using ActiveMQ.Artemis.Client;
 using ActiveMQ.Artemis.Client.Extensions.DependencyInjection;
 using ActiveMQ.Artemis.Client.Extensions.Hosting;
