@@ -1,0 +1,11 @@
+version: "3"
+services:
+  activemq-artemis:
+    container_name: activemq-artemis
+    image: vromero/activemq-artemis
+    environment:
+      - ARTEMIS_USERNAME=guest
+      - ARTEMIS_PASSWORD=guest
+    ports:
+      - 5672:5672
+      - 8161:8161
