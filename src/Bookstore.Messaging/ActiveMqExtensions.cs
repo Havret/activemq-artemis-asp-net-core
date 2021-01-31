@@ -19,7 +19,7 @@ namespace Bookstore.Messaging
             return builder;
         }
 
-        private static async Task HandleMessage<TMessage, TConsumer>(Message message, IConsumer consumer, CancellationToken token, IServiceProvider serviceProvider)
+        private static async Task HandleMessage<TMessage, TConsumer>(Message message, IConsumer consumer, IServiceProvider serviceProvider, CancellationToken token)
             where TConsumer : class, ITypedConsumer<TMessage>
         {
             var msg = JsonSerializer.Deserialize<TMessage>(message.GetBody<string>());
