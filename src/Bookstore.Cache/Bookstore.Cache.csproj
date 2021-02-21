@@ -5,9 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Unofficial.ActiveMQ.Artemis.Client" Version="1.2.1" />
-    <PackageReference Include="Unofficial.ActiveMQ.Artemis.Client.Extensions.DependencyInjection" Version="1.0.0" />
-    <PackageReference Include="Unofficial.ActiveMQ.Artemis.Client.Extensions.Hosting" Version="1.0.0" />
+    <PackageReference Include="ArtemisNetClient" Version="2.0.0" />
+    <PackageReference Include="ArtemisNetClient.Extensions.DependencyInjection" Version="2.0.0" />
+    <PackageReference Include="ArtemisNetClient.Extensions.Hosting" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
